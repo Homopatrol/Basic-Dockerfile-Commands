@@ -1,3 +1,9 @@
+# A simple Docker guide
+
+This repo is designed for a friendly step by step introduction to building your first Docker container.
+
+This starts with the image `python:alpine3.13`
+
 - [Building a dockerfile](#building-a-dockerfile)
 - [Running your container](#running-your-container)
 - [Adding files](#adding-files)
@@ -5,9 +11,6 @@
 - [Users](#users)
 - [Entrypoints](#entrypoints)
 
-This repo is designed for a friendly step by step introduction to building your first Docker container.
-
-This starts with the image `python:alpine3.13`
 
 ### Building a dockerfile
 
