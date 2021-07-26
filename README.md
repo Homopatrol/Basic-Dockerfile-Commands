@@ -27,7 +27,7 @@ Then perform:
 ```console
 docker build -t <yourdockername>/<my_first_dockefile>:<revision> .
 ```
-**You will have to rebuild your Docker image everytime you make changes to the Dockerfile.
+**You will have to rebuild your Docker image everytime you make changes to the Dockerfile.**
 
 ### Running your container 
 
