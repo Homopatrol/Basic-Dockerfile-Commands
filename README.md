@@ -16,9 +16,9 @@ This starts with the image `python:alpine3.13`
 - Install Docker and git 
 - clone this repository ```console git clone https://github.com/Homopatrol/Docker_start```
 
-### Building a dockerfile
+### Building a Docker Image
 
-To build your dockerfile run the command make sure you are in the same directory as the `Dockerfile`
+To build a Docker **Image** make sure you are in the same directory as the `Dockerfile`
 ```console
 cd Docker_start/
 ```
@@ -29,7 +29,7 @@ docker build -t <yourdockername>/<my_dockefile>:1 .
 
 ### Running your container 
 
-To create a container based off your newly built docker image run:
+To create a **Container** based off your newly built Docker Image run:
 ```console
 docker run -it <yourdockername>/<my_dockefile>:1 sh
 ```
@@ -42,6 +42,14 @@ the flag `-it` is a combination of the flags `-i` and & `-t`.
 
 The stdin stream (-i) attaches the container to the stdin of your shell while the TTY (-t)  gives you the ability to interact with the container like a traditional VM.
 
+```console
+docker run -it  pandoraholladay/test:1 sh
+/ # ls
+bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+/ # echo "This command is being run inside a container"
+This command is being run inside a container
+/ # 
+```
 ### Adding files
 
 `COPY \ \` 
