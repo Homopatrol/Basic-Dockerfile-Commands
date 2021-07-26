@@ -226,13 +226,13 @@ ENTRYPOINT ["python", "hello_python.py"]
 
 Ah yes you beat me to it! let's use the `WORKDIR` instruction to set the working directory for this instruction.
 
-**Note** any `RUN` `CMD` `COPY` and `ADD` instructions that follow this `WORKDIR` in the Dockerfile will also be executed under `/files`
+**Note** Any `RUN` `CMD` `COPY` and `ADD` instructions that follow this `WORKDIR` in the Dockerfile will also be executed under `/files`
 
 ```console
 WORKDIR files/
 ```
 
-**Note**The WORKDIR instruction can be used multiple times, if the WORKDIR doesn’t exist, it will be created even if it’s not used in any subsequent Dockerfile instruction.
+**Note** The `WORKDIR` instruction can be used multiple times, if the `WORKDIR` doesn’t exist, it will be created even if it’s not used in any subsequent Dockerfile instruction.
 
 Now if you build you image again and try to run it you should now see the output of the "hello_python.py" script.
 
