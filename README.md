@@ -11,10 +11,18 @@ This starts with the image `python:alpine3.13`
 - [Users](#users)
 - [Entrypoints](#entrypoints)
 
+## Pre-reqs
+
+- Install Docker and git 
+- clone this repository ```console git clone https://github.com/Homopatrol/Docker_start```
 
 ### Building a dockerfile
 
-To build your dockerfile run the command 
+To build your dockerfile run the command make sure you are in the same directory as the `Dockerfile`
+```console
+cd Docker_start/
+```
+And perform:
 ```console
 docker build -t <yourdockername>/<my_dockefile>:1 .
 ```
@@ -25,6 +33,14 @@ To create a container based off your newly built docker image run:
 ```console
 docker run -it <yourdockername>/<my_dockefile>:1 sh
 ```
+the flag `-it` is a combination of the flags `-i` and & `-t`.
+
+| Name | shorthand | description | 
+|------|-----------|-------------|
+|--interactive | -i 	|	Keep STDIN open even if not attached |
+|--tty | -t |	Allocate a pseudo-TTY |
+
+The stdin stream (-i) attaches the container to the stdin of your shell while the TTY (-t)  gives you the ability to interact with the container like a traditional VM.
 
 ### Adding files
 
