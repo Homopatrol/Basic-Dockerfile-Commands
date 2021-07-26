@@ -65,7 +65,16 @@ Dockerfile       README.md        hello_bash.sh    hello_python.py
 
 ### Adding packages
 
+```console
+ => ERROR [3/3] RUN  git clone https://github.com/johnmosesman/practical-git-tutorial &&      chown -R 47:0 /files &&      chmod -R g=u /files                                                                                           0.3s
+------
+ > [3/3] RUN  git clone https://github.com/johnmosesman/practical-git-tutorial &&      chown -R 47:0 /files &&      chmod -R g=u /files:
+#7 0.242 /bin/sh: git: not found
+
+```
+
 Notice how you cannot run the `xxx` script in this container? - this is because we are missing xxx on our dockerfile! ( Remeber Dockerfile should be built with the minimum packages needed) 
+
 
 So lets try adding the command git to our Dockerfile 
 
@@ -73,7 +82,21 @@ So lets try adding the command git to our Dockerfile
 
 `RUN` will execute any commands in a new layer on top of the current image and commit the results into your Dockerfile. 
 
-Now say we want to add files from a git repository we can now run the command git clone .... as we build our image.
+Now say we want to add files from a git repository we can now run the command `git clone https://github.com/johnmosesman/practical-git-tutorial` .... as we build our image.
+
+```console
+docker run -it  pandoraholladay/test:1 sh
+/ $ ls
+bin                     files                   media                   practical-git-tutorial  run                     sys                     var
+dev                     home                    mnt                     proc                    sbin                    tmp
+etc                     lib                     opt                     root                    srv                     usr
+```
+
+```console
+/ $ cat practical-git-tutorial/chapter-1.txt 
+Chapter 1 - The Beginning
+It was the best of times, it was the worst of times
+```
 
 ### Users
 
@@ -88,7 +111,9 @@ FROM ...
 ..
 ARG UID=47
 ARG GID=47
-RUN chown -R ${UID}:0 /files && \
+RUN apk add git && \
+     ...
+     chown -R ${UID}:0 /files && \ chown -R ${UID}:0 /files && \
      chmod -R g=u /files
 
 USER 47
@@ -106,6 +131,11 @@ drwxrwxr-x    1 47       root          4096 Jul 26 11:43 .git
 -rw-rw-r--    1 47       root          1419 Jul 26 11:39 README.md
 -rw-rw-r--    1 47       root           365 Jul 26 12:11 hello_bash.sh
 -rw-rw-r--    1 47       root            59 Jul 26 11:39 hello_python.py
+```
+
+```
+ls -la
+drwxr-xr-x    3 root     root          4096 Jul 26 12:48 practical-git-tutorial
 ```
 
 ### Entrypoints
