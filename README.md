@@ -14,8 +14,9 @@ This starts with the image `python:alpine3.13`
 
 ## Pre-reqs
 
-- Install Docker and git 
+- Either installed Docker and git or use the website https://labs.play-with-docker.com/#
 - Clone this repository: ```console git clone https://github.com/Homopatrol/Docker_start```
+
 
 ### Building a Docker Image
 
@@ -254,6 +255,7 @@ Dockerfile       README.md        hello_bash.sh    hello_python.py
 Notice how our container started in `/files` this time because of our `WORKDIR` instruction ;)
 
 ## Additional Reading
+- https://training.play-with-docker.com/alacart/
 - https://docs.docker.com/get-started/overview/
 - https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 - https://docs.docker.com/language/
