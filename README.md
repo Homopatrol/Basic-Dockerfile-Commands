@@ -1,4 +1,4 @@
-# A simple guide to Docker basic Docker commands.
+# A simple guide to basic Docker commands.
 
 This repo is designed as a friendly step-by-step introduction to building your first Dockerfile.
 
