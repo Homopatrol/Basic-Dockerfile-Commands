@@ -1,4 +1,4 @@
-# A simple Docker guide
+# A simple guide to Docker basic Docker commands.
 
 This repo is designed as a friendly step-by-step introduction to building your first Dockerfile.
 
@@ -16,7 +16,6 @@ This starts with the image `python:alpine3.13`
 
 - Either installed Docker and git or use the website https://labs.play-with-docker.com/#
 - Clone this repository: ```console git clone https://github.com/Homopatrol/Docker_start```
-
 
 ### Building a Docker Image
 
@@ -77,14 +76,7 @@ Dockerfile       README.md        hello_bash.sh    hello_python.py
 
 ### Adding packages
 
-Lets try adding a 
-
-
-to our 
-
-So lets try adding the command git to our Dockerfile 
-
-`RUN apk add git` 
+Lets try adding this [practical-git-tutorial](https://github.com/johnmosesman/practical-git-tutorial) git hub repository into our container.
 
 The `RUN` instruction will execute any commands in a new layer on top of the current image and commit the results into your Dockerfile. 
 
